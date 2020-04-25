@@ -1,11 +1,11 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Product_model extends CI_Model
+class Obat_model extends CI_Model
 {
     private $_table = "obat";
 
     public $id_obat;
-    public $nama;
+    public $nama_obat;
     public $harga;
     public $gambar = "default.jpg";
     public $deskripsi;
@@ -41,7 +41,7 @@ class Product_model extends CI_Model
     {
         $post = $this->input->post();
         $this->id_obat = uniqid();
-        $this->nama = $post["nama"];
+        $this->nama_obat = $post["nama_obat"];
         $this->harga = $post["harga"];
         $this->deskripsi = $post["deskripsi"];
         $this->db->insert($this->_table, $this);
@@ -51,7 +51,7 @@ class Product_model extends CI_Model
     {
         $post = $this->input->post();
         $this->id_obat = $post["id"];
-        $this->nama = $post["nama"];
+        $this->nama_obat = $post["nama_obat"];
         $this->harga = $post["harga"];
         $this->deskripsi = $post["deskripsi"];
         $this->db->update($this->_table, $this, array('id_obat' => $post['id']));
