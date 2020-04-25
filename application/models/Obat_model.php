@@ -4,11 +4,11 @@ class Product_model extends CI_Model
 {
     private $_table = "obat";
 
-    public $product_id;
-    public $name;
-    public $price;
-    public $image = "default.jpg";
-    public $description;
+    public $id_obat;
+    public $nama;
+    public $harga;
+    public $gambar = "default.jpg";
+    public $deskripsi;
 
     public function rules()
     {
