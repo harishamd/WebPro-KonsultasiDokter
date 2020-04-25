@@ -8,7 +8,7 @@
   <body>
 
     <div class="login-box">
-      <img src="img/logo.png" class="avatar" alt="Avatar Image">
+      <img class="d-block w-100" src="<?php echo base_url(); ?>/assets/img/login.jpg" alt="avatar image">
       <h1>Login</h1>
       
         <form method='post' action="<?=base_url('index.php/user/login')?>">

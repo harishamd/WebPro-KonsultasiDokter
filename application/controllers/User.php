@@ -48,4 +48,29 @@ class User extends CI_Controller {
         $this->session->set_flashdata('message', 'Logout success');
         redirect('page/login');
     }
+	
+	public function editakun(){
+		$data = [
+            'nama' => $this->input->post('nama'),
+            'password' => $this->input->post('password'),
+			'email' => $this->input->post('email'),
+        ];
+        $this->M_web->edit_akun($email,$data);
+
+        $this->session->set_flashdata('message', 'Update success');
+        redirect('Web/page_akun');
+	}
+
+	public function tambahobat(){
+		$data['judul'] = 'Obat';
+		$this->form_validation->set_rules('jumlah','jumlah','required');
+		$data['tambahdata']=$this->M_web->tambah_jurusan($data);
+		redirect('page_pembayaran');
+	}
+
+	public function hapusobat($nama)
+	{
+		$data['hapus']=$this->M_web->hapusobat($nama);
+		redirect('page_pembayaran');
+	}
 }

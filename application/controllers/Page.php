@@ -26,7 +26,7 @@ class Page extends CI_Controller {
     }
 
 	public function index() {
-        redirect('page/home');
+        redirect('page/login');
     }
     public function addregister(){
          $data = [
@@ -59,7 +59,20 @@ class Page extends CI_Controller {
         // $data = [
         //     'books' => $this->BookModel->getAllBooks()->result_array(),
         // ];
+		$this->load->view('page_header');
         $this->load->view('HomeView');
     }
+	
+	public function akun(){
+		$data_akun = $this->UserModel->Getakun_nama();
+		$this->load->view('page_header');
+		$this->load->view('page_akun',['data'=>$data_akun]);
+	}
+
+	public function pembayaran($nama){
+		$data_pembayaran = $this->UserModel->GetPembayaran();
+		$this->load->view('page_header');
+		$this->load->view('page_pembayaran',['data'=>$data_pembayaran]);
+	}
 }
 
