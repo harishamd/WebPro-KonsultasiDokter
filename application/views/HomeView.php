@@ -42,7 +42,15 @@
 	</div>
 	<footer id="sticky-footer" class="py-4 bg-dark text-white-50 fixed-bottom">
     	<div class="container text-center">
-      		<small>Copyright &copy; HaiDok</small>
+      		<small>Tentang kami</small>
+			<br>
+			<small> Haris Hamdani Latif (1301174659) </small>
+			<br>
+			<small> Aldi Febiansyah (1301172740) </small>
+			<br>
+			<small> Ecky Prasetyo Nugroho (1301172736) </small>
+			<br>
+			<small> Muhammad Yaumil Ihza (1301174634) </small>
     	</div>
     	
   	</footer>
