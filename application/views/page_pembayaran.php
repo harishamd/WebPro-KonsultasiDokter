@@ -17,70 +17,24 @@
   <form action='<?=site_url('User/tambahobat')?>' method='post'>
     <div class="form-group">
       <label>Nama : </label>
-      <?php echo $data['nama'];?>
+		<input type="text" hidden="true" id="nama" name="nama" value="<?php echo $namauser; ?>"/>
+      <?php echo $namauser;?>
     </div>
     <div class="form-group">
       <label>Nama Obat : </label>
-      <?php echo $data['katasandi']; ?>
+	<input type="text" hidden="true" id="nama_obat" name="nama_obat" value="<?php echo $namaobat; ?>"/>	<?php echo $namaobat; ?>
+      
     </div>
 	  <div class="form-group">
       <label for="harga">Harga : </label>
-      <?php echo $data['harga']; ?>
-    </div>
-	  <div class="form-group">
-      <label for="jumlah">Jumlah</label>
-      <input type="number" class="form-control" id="jumlah">
+		  <input type="text" hidden="true" id="harga" name="harga" value="<?php echo $hargaobat; ?>"/>	
+      <?php echo $hargaobat; ?>
     </div>
     <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="tambah">
  	  submit
 	</button>
-  </form>
-	<form action='<?=site_url('User/hapusobat')?>' method='post'>
-	<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="delete">
+	<a href="<?php echo base_url('index.php/user/hapusobat')?>"><button  class="btn btn-primary" data-target="delete">
  	 	hapus
-	</button>
+		</button></a>
 </div>
-
-<div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Pembayaran</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <?php echo $data['nama']; ?>
-	   <?php echo $data['nama_obat']; ?>
-	   <?php echo $data['jumlah']; ?>
-	   <?php echo $data['kode']; ?>
-	   <?php echo $data['jumlah_harga']; ?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Apakah anda yakin akan menghapus data
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-        <button type="submit" class="btn btn-primary">Yes</button>
-      </div>
-    </div>
-  </div>
-</div>
+	</form>

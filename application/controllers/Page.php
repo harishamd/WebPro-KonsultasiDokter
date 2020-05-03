@@ -5,6 +5,7 @@ class Page extends CI_Controller {
 	public function __construct() {
         parent::__construct();
         $this->load->model('UserModel');
+		$this->load->model('Obat_model');
     }
 	/**
 	 * Index Page for this controller.
@@ -96,9 +97,11 @@ class Page extends CI_Controller {
         	$this->load->view("page_obat", $data);
     }
 	public function pembayaran(){
-		$data_pembayaran = $this->UserModel->GetPembayaran();
+		$data['namaobat'] = $this->input->post('nama');
+		$data['hargaobat'] = $this->input->post('harga');
+		$data['namauser'] = $this->session->user['nama'];;
 		$this->load->view('page_header');
-		$this->load->view('page_pembayaran',['data'=>$data_pembayaran]);
+		$this->load->view('page_pembayaran',$data);
     }
 	public function roomchat(){
 		$this->load->view('roomchat');

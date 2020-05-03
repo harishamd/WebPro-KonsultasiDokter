@@ -11,6 +11,10 @@ class UserModel extends CI_Model {
         $this->db->insert('registrasi_akun', $data);
     }
 	
+	public function addPembayaran($data) {
+        $this->db->insert('pembayaran', $data);
+    }
+	
 	public function Getakun_nama(){
 		$this->db->select('*');
 		$this->db->from('registrasi_akun');

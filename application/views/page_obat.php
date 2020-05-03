@@ -35,13 +35,17 @@
 
 <h2 style="text-align:center">Daftar Obat</h1>
 <?php foreach ($obats as $obat): ?>
+	<form action="<?php echo base_url('index.php/page/pembayaran'); ?>" method='post'> 
     <div class="card">
     <h2><?php echo $obat->nama_obat ?></h2>
+	<input type="hidden" name="nama" value="<?php echo $obat->nama_obat ; ?>">
     <img src="<?php echo base_url('upload/obat/'.$obat->gambar) ?>" width="128" />
     <p class='price'>Rp. <?php echo $obat->harga ?></p>
+	<input type="hidden" name="harga" value="<?= $obat->harga ; ?>">
     <p><?php echo $obat->deskripsi ?></p>
-    <p><button>Beli</button></p>
+    <p><button type="submit">Beli</button></p>
     </div>
+	</form>
 <?php endforeach; ?>
 </body>
 </html>

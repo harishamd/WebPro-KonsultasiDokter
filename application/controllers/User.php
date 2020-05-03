@@ -67,15 +67,21 @@ class User extends CI_Controller {
 	}
 
 	public function tambahobat(){
-		$data['judul'] = 'Obat';
-		$this->form_validation->set_rules('jumlah','jumlah','required');
-		$data['tambahdata']=$this->UserModel->tambah_jurusan($data);
-		redirect('page_pembayaran');
+		$data = [
+            'nama' => $this->input->post('nama'),
+            'nama_obat' => $this->input->post('nama_obat'),
+            'harga' => $this->input->post('harga'),
+			];
+		$this->UserModel->addPembayaran($data);
+		redirect('page/home');
 	}
 
-	public function hapusobat($nama)
+	public function hapusobat()
 	{
-		$data['hapus']=$this->UserModel->hapusobat($nama);
-		redirect('page_pembayaran');
+		$data['namaobat'] = '';
+		$data['hargaobat'] = '';
+		$data['namauser'] = '';
+		$this->load->view("page_header");
+		$this->load->view('page_pembayaran', $data);
 	}
 }
