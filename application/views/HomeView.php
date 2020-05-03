@@ -1,11 +1,6 @@
    <div class="container">
     	<h3>Anda punya keluhan tentang kesehatan?</h3>
   		<p>Ini adalah website yang cocok untuk anda bertanya-tanya ataupun konsul masalah kesehatan dengan dokter secara langsung</p>
-  		<div class="btn-group btn-group-lg">
-  			<button type="button" class="btn btn-primary">Tanya Dokter</button>
-  			<button type="button" class="btn btn-primary">Beli Obat</button>
-  			<button type="button" class="btn btn-primary">Cari Dokter</button>
-		</div>
     	<div id="myCarousel" class="carousel slide" data-ride="carousel">
     	<!-- Indicators -->
    			<ol class="carousel-indicators">

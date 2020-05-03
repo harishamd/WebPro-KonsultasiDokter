@@ -30,7 +30,7 @@
       			<li class="active"><a href="<?php echo base_url('index.php/page/home') ?>">Home</a></li>
 			<li><a href="<?php echo base_url('index.php/page/obat') ?>">Daftar Obat</a></li>
       			<li><a href="<?php echo base_url('index.php/page/pembayaran') ?>">Beli Obat</a></li>
-      			<li><a href="<?php echo base_url('index.php/page/roomchat') ?>">Dokter</a></li>
+      			<li><a href="<?php echo base_url('index.php/page/roomchat') ?>">Tanya Dokter</a></li>
     		</ul>
     		<ul class="nav navbar-nav navbar-right">
     			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Profil <span class="caret"></span></a>
