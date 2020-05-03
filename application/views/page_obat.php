@@ -37,8 +37,8 @@
 <?php foreach ($obats as $obat): ?>
     <div class="card">
     <h2><?php echo $obat->nama_obat ?></h2>
-    <?php echo $obat->gambar ?>
-    <p class='price'><?php echo $obat->harga ?></p>
+    <img src="<?php echo base_url('upload/obat/'.$obat->gambar) ?>" width="128" />
+    <p class='price'>Rp. <?php echo $obat->harga ?></p>
     <p><?php echo $obat->deskripsi ?></p>
     <p><button>Beli</button></p>
     </div>
