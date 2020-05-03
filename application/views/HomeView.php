@@ -12,15 +12,17 @@
     		<div class="carousel-inner" role="listbox">
 
      			<div class="item active">
-       				 <img class="d-block w-100" src="<?php echo base_url(); ?>/assets/img/3.jpg" alt="First slide">
-
-        		
+					<img class="d-block w-100" src="<?php echo base_url(); ?>/assets/img/1.jpg" alt="First slide">
       			</div>
-
       			<div class="item">
        			 	<img class="d-block w-100" src="<?php echo base_url(); ?>/assets/img/2.jpg" alt="First slide">
-        		
       			</div>
+				<div class="item">
+					<img class="d-block w-100" src="<?php echo base_url(); ?>/assets/img/a.jpg" alt="First slide">
+				</div>
+				<div class="item">
+					<img class="d-block w-100" src="<?php echo base_url(); ?>/assets/img/4.jpg" alt="First slide">
+				</div>
     
       		</div>
   
