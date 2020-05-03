@@ -17,7 +17,7 @@ class UserModel extends CI_Model {
 		$email= $this->session->userdata('user')['email'];
 		$this->db->where('email', $email);
 		$query = $this->db->get();
-		return $query->result_array();
+		return $query->row();
 	}
 	
 	public function GetPembayaran(){
@@ -27,16 +27,14 @@ class UserModel extends CI_Model {
 		return $query->result_array();
 	}
 
-	public function edit_akun($email,$data)
-	{
-		$email = $_POST['email'];
-		$query = "SELECT * FROM akun WHERE email = '$email'";
-		$hasil = mysql_query($query);
-		if (mysql_num_rows($hasil)>0)
-		{
-			$data  = mysql_fetch_array($hasil);
-		}
-		else
-			echo "email tidak ditemukan";
-	}
+	public function edit_akun($data){
+	$email= $this->session->userdata('user')['email'];
+	$this->db->where('email',$email);
+   return $this->db->update('registrasi_akun', $data);
+ }
+	public function hapusakun(){
+	$email= $this->session->userdata('user')['email'];
+	$this->db->where('email',$email);
+   return $this->db->delete('registrasi_akun');
+ }
 }

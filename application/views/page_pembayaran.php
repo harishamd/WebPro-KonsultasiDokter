@@ -1,24 +1,44 @@
+<head>
+  <title>Pembayaran</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav">
+    <li><a href="#">Beli obat</a></li>
+  </ul>
+  <p class="navbar-text">> Pembayaran</p>
+</nav>
 <div class="container">
-   <div class="box">
-	<h2>Transaksi Pembayaran</h2>
-	<?php echo validation_errors(); ?>
-	<form action='<?=site_url('Web/tambahobat')?>' method='post'>
-	<table>
-	<tr><td>Nama</td><td>:</td><td></td></tr>
-	<tr><td>Nama obat</td><td>:</td><td></td></tr>
-	<tr><td>Jumlah</td><td>:</td><td> <input type="number" name="jumlah"></td></tr>
-	<tr><td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="tambah">
+  <h2>Akun</h2>
+  <form action='<?=site_url('User/tambahobat')?>' method='post'>
+    <div class="form-group">
+      <label>Nama : </label>
+      <?php echo $data['nama'];?>
+    </div>
+    <div class="form-group">
+      <label>Nama Obat : </label>
+      <?php echo $data['katasandi']; ?>
+    </div>
+	  <div class="form-group">
+      <label for="harga">Harga : </label>
+      <?php echo $data['harga']; ?>
+    </div>
+	  <div class="form-group">
+      <label for="jumlah">Jumlah</label>
+      <input type="number" class="form-control" id="jumlah">
+    </div>
+    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="tambah">
  	  submit
-	</button></td>
-	</form>
-	<td><form action='<?=site_url('Web/hapusobat')?>' method='post'>
+	</button>
+  </form>
+	<form action='<?=site_url('User/hapusobat')?>' method='post'>
 	<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="delete">
  	 	hapus
-	</button></td>
-	</tr>
-	</form>
-	</table>
-  </div>
+	</button>
 </div>
 
 <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

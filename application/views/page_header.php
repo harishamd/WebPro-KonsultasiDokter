@@ -27,9 +27,10 @@
      			<a class="navbar-brand" href="#">Hai Dok</a>
     		</div>
    			<ul class="nav navbar-nav">
-      			<li class="active"><a href="#">Home</a></li>
-      			<li><a href="#">Beli Obat</a></li>
-      			<li><a href="#">Dokter</a></li>
+      			<li class="active"><a href="<?php echo base_url('index.php/page/home') ?>">Home</a></li>
+			<li><a href="<?php echo base_url('index.php/page/obat') ?>">Daftar Obat</a></li>
+      			<li><a href="<?php echo base_url('index.php/page/pembayaran') ?>">Beli Obat</a></li>
+      			<li><a href="<?php echo base_url('index.php/page/roomchat') ?>">Dokter</a></li>
     		</ul>
     		<ul class="nav navbar-nav navbar-right">
     			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Profil <span class="caret"></span></a>
@@ -37,7 +38,6 @@
       					<li><a href="<?php echo base_url('index.php/page/akun') ?>">Akun</a></li>
          				<li><a href="<?php echo base_url('index.php/user/logout') ?>">Logout</a></li>
          			</ul>
-         		<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    		</ul>
+				</ul>
   		</div>
 	</nav>

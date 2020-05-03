@@ -43,6 +43,7 @@ class Obat_model extends CI_Model
         $this->id_obat = uniqid();
         $this->nama_obat = $post["nama_obat"];
         $this->harga = $post["harga"];
+        /*$this->gambar = $this->UploadImage();*/
         $this->deskripsi = $post["deskripsi"];
         $this->db->insert($this->_table, $this);
     }
@@ -53,6 +54,11 @@ class Obat_model extends CI_Model
         $this->id_obat = $post["id"];
         $this->nama_obat = $post["nama_obat"];
         $this->harga = $post["harga"];
+        /*if (!empty($_FILES["gambar"]["nama_obat"])) {
+            $this->image = $this->_uploadImage();
+        } else {
+            $this->image = $post["old_image"];
+		}*/
         $this->deskripsi = $post["deskripsi"];
         $this->db->update($this->_table, $this, array('id_obat' => $post['id']));
     }
@@ -61,4 +67,29 @@ class Obat_model extends CI_Model
     {
         return $this->db->delete($this->_table, array("id_obat" => $id));
     }
+    /*private function _uploadImage()
+    {
+    $config['upload_path']          = './upload/obat/';
+    $config['allowed_types']        = 'gif|jpg|png';
+    $config['file_name']            = $this->id_obat;
+    $config['overwrite']			= true;
+    $config['max_size']             = 1024; // 1MB
+    // $config['max_width']            = 1024;
+    // $config['max_height']           = 768;
+
+    $this->load->library('upload', $config);
+
+    if ($this->upload->do_upload('gambar')) {
+        return $this->upload->data("file_name");
+    }
+    
+    return "default.jpg";
+    }*/
+    /*private function _deleteImage($id){
+    $product = $this->getById($id);
+    if ($product->image != "default.jpg") {
+	    $filename = explode(".", $product->image)[0];
+		return array_map('unlink', glob(FCPATH."upload/product/$filename.*"));
+    }
+    }*/
 }

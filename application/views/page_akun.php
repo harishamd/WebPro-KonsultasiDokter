@@ -1,50 +1,37 @@
-  <div class="container">
-    <div class="box">
-      <h2>Akun</h2>           
-
-	  <?php echo validation_errors(); ?>
-
-	  <form action='<?=site_url('Web/editakun')?>' method='post'>
-	
-	  <h5>Username</h5>
-	  <input type="text" name="username" value="<?php echo $data['nama']; ?>" size="50" />
-
-	  <h5>Password</h5>
-	  <input type="password" name="password" value="<?php echo $data['password']; ?>" size="50" />
-
-	  <h5>Password Confirm</h5>
-	  <input type="password" name="passconf" value="<?php echo $data['password']; ?>" size="50" />
-
-	  <h5>Email Address</h5>
-	  <input type="text" name="email" value="<?php echo $data['email']; ?>" size="50" />
-	  </form>
-	  <br><br>
-	  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#update">
+<head>
+  <title>akun</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav">
+    <li><a href="<?php echo base_url('index.php/page/home') ?>">Home</a></li>
+  </ul>
+  <p class="navbar-text">> Akun</p>
+</nav>
+<div class="container">
+  <h2>Akun</h2>
+  <form action='<?=site_url('User/editakun')?>' method='post'>
+    <div class="form-group">
+      <label for="nama">Nama</label>
+      <input type="text" class="form-control" name="nama" value='<?php echo $data->nama ?>'>
+    </div>
+    <div class="form-group">
+      <label for="password">password</label>
+      <input type="password" class="form-control" name="katasandi" value='<?php echo $data->katasandi ?>'>
+    </div>
+	  <div class="form-group">
+      <label for="email">email</label>
+      <input type="text" class="form-control" name="email" value='<?php echo $data->email ?>'>
+    </div>
+    <button type="submit" class="btn btn-primary">
  	  submit
-	  </button>
-
-	  </form>
-    </div>
-  </div>
-
-
-<!-- Modal button -->
-<div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Update data</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Apakah anda yakin akan mengupdate
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">kembali</button>
-        <button type="button" class="btn btn-primary">ya</button>
-      </div>
-    </div>
-  </div>
+	</button>
+	  <button type="submit" class="btn btn-primary"><a href="<?=site_url('User/hapusakun') ?>">
+ 	  hapus
+	</button>
+  </form>
 </div>

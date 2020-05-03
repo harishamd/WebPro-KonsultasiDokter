@@ -2,7 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Page extends CI_Controller {
-
+	public function __construct() {
+        parent::__construct();
+        $this->load->model('UserModel');
+    }
 	/**
 	 * Index Page for this controller.
 	 *
@@ -22,6 +25,12 @@ class Page extends CI_Controller {
 	private function checkLogin() {
         if (!$this->session->userdata('user')) {
             redirect('page/login');
+        }
+    }
+	
+	private function checkLoginAdmin() {
+        if (!$this->session->userdata('admin')) {
+            redirect('page/loginadmin');
         }
     }
 
@@ -49,6 +58,10 @@ class Page extends CI_Controller {
     public function login() {
         $this->load->view('form_login');
     }
+	
+	public function loginadmin() {
+        $this->load->view('form_loginadmin');
+    }
 
     public function register() {
         $this->load->view('form_registrasi');
@@ -63,16 +76,30 @@ class Page extends CI_Controller {
         $this->load->view('HomeView');
     }
 	
+	public function homeadmin() {
+        $this->checkLoginAdmin();
+        // $data = [
+        //     'books' => $this->BookModel->getAllBooks()->result_array(),
+        // ];
+		$this->load->view('page_header');
+        $this->load->view('HomeView');
+    }
+	
 	public function akun(){
 		$data_akun = $this->UserModel->Getakun_nama();
 		$this->load->view('page_header');
 		$this->load->view('page_akun',['data'=>$data_akun]);
 	}
-
-	public function pembayaran($nama){
+    	public function obat(){
+        	$this->load->view('page_obat');
+    }
+	public function pembayaran(){
 		$data_pembayaran = $this->UserModel->GetPembayaran();
 		$this->load->view('page_header');
 		$this->load->view('page_pembayaran',['data'=>$data_pembayaran]);
+    }
+	public function roomchat(){
+		$this->load->view('roomchat');
 	}
 }
 
