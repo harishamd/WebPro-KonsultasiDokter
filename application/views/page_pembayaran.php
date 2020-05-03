@@ -13,7 +13,7 @@
   <p class="navbar-text">> Pembayaran</p>
 </nav>
 <div class="container">
-  <h2>Akun</h2>
+  <h2>Pembayaran</h2>
   <form action='<?=site_url('User/tambahobat')?>' method='post'>
     <div class="form-group">
       <label>Nama : </label>
