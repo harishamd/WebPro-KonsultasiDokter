@@ -16,12 +16,6 @@ class Obats extends CI_Controller
         $data["obats"] = $this->obat_model->getAll();
         $this->load->view("admin/obat/list", $data);
     }
-	
-	public function catalog()
-    {
-        $data["obats"] = $this->obat_model->getAll();
-        $this->load->view("page_obat", $data);
-    }
 
     public function add()
     {
