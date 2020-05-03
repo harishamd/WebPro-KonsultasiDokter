@@ -91,7 +91,9 @@ class Page extends CI_Controller {
 		$this->load->view('page_akun',['data'=>$data_akun]);
 	}
     	public function obat(){
-        	$this->load->view('page_obat');
+        	$data['obats'] = $this->Obat_model->getAll();
+        	$this->load->view('page_header');
+        	$this->load->view("page_obat", $data);
     }
 	public function pembayaran(){
 		$data_pembayaran = $this->UserModel->GetPembayaran();
