@@ -15,7 +15,7 @@ class Chat extends CI_Controller {
 		];
 		$this->ChatModel->addChat($data);
 
-		$this->session->set_flashdata('message', 'Chat Success');
+		$this->session->set_flashdata('message', 'Pesan berhasil dikirim');
 		redirect('page/roomchat');
 	}
 }
