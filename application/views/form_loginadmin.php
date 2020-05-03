@@ -11,7 +11,7 @@
       <!-- <img class="d-block w-100" src="<?php echo base_url(); ?>/assets/img/login.jpg" alt="avatar image"> -->
       <h1>Login Admin</h1>
       
-        <form method='post' action="<?=base_url('index.php/Admin/loginadmin')?>">
+        <form method='post' action="<?=base_url('index.php/admin/loginadmin')?>">
         <!-- USERNAME INPUT -->
         <label for="username">Username</label>
         <input type="text" Name="username" placeholder="Masukan Username">

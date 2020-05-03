@@ -6,16 +6,16 @@ class Chat extends CI_Controller {
 		parent::__construct();
 		$this->load->model('ChatModel');
 	}
-	public function chat(){
+	public function addChat(){
 		$data = [
 			'subjek' => $this->input->post('subjek'),
 			'nama' => $this->input->post('nama'),
 			'pilihan_dokter' => $this->input->post('pilihan_dokter'),
 			'pesan' => $this->input->post('pesan'),
 		];
-		$this->ChatModel->addChat(@data);
+		$this->ChatModel->addChat($data);
 
-		$this->sesion->set_flashdata('messgae', 'Chat Success');
+		$this->session->set_flashdata('message', 'Pesan berhasil dikirim');
 		redirect('page/roomchat');
 	}
 }
