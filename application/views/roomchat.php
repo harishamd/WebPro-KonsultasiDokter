@@ -18,18 +18,18 @@
 <div class="container">
   <h2>Tanya Dokter</h2>
   <p>Silahkan ajukan pertanyaan anda pada form ini</p>
-  <form>
+	<form method='post' action="<?=base_url('index.php/chat/addChat')?>">
     <div class="form-group">
       <label for="sbj">Subjek</label>
-      <input type="text" class="form-control" id="sbj">
+      <input type="text" class="form-control" id="subjek" name="subjek">
     </div>
     <div class="form-group">
       <label for="sbj">Nama</label>
-      <input type="text" class="form-control" id="sbj">
+      <input type="text" class="form-control" id="nama" name="nama">
     </div>
     <div class="form-group">
       <label for="pil">Pilihan Dokter</label>
-      <select class="form-control" id="pil">
+      <select class="form-control" id="pilihan_dokter" name="pilihan_dokter">
         <option>Dokter Umum</option>
         <option>Dokter Spesialis</option>
         <option>Dokter Khusus</option>
@@ -38,7 +38,7 @@
     </div>
     <div class="form-group">
       <label for="tanya">Pertanyaan</label>
-      <textarea class="form-control" rows="5" id="tanya"></textarea>
+      <textarea class="form-control" rows="5" id="pesan" name="pesan"></textarea>
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
