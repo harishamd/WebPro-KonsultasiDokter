@@ -7,7 +7,7 @@
             <span>Obat</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="<?php echo site_url('admin/obats') ?>">List Obat</a>
+            <a class="dropdown-item" href="<?php echo site_url('obats') ?>">List Obat</a>
         </div>
     </li>
     <li class="nav-item">
