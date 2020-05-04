@@ -5,7 +5,7 @@ class Page extends CI_Controller {
 	public function __construct() {
         parent::__construct();
         $this->load->model('UserModel');
-		$this->load->model('Obat_model');
+        $this->load->model('Obat_model');
     }
 	/**
 	 * Index Page for this controller.
@@ -77,34 +77,26 @@ class Page extends CI_Controller {
         $this->load->view('HomeView');
     }
 	
-	public function homeadmin() {
-        $this->checkLoginAdmin();
-        // $data = [
-        //     'books' => $this->BookModel->getAllBooks()->result_array(),
-        // ];
-		$this->load->view('page_header');
-        $this->load->view('HomeView');
-    }
-	
 	public function akun(){
 		$data_akun = $this->UserModel->Getakun_nama();
 		$this->load->view('page_header');
 		$this->load->view('page_akun',['data'=>$data_akun]);
 	}
-    	public function obat(){
-        	$data['obats'] = $this->Obat_model->getAll();
-        	$this->load->view('page_header');
-        	$this->load->view("page_obat", $data);
+    public function obat(){
+        $data['obats'] = $this->Obat_model->getAll();
+        $this->load->view('page_header');
+        $this->load->view("page_obat", $data);
     }
-	public function pembayaran(){
-		$data['namaobat'] = $this->input->post('nama');
-		$data['hargaobat'] = $this->input->post('harga');
-		$data['namauser'] = $this->session->user['nama'];;
+	public function pembayaran($nama){
+		$data_pembayaran = $this->UserModel->GetPembayaran();
 		$this->load->view('page_header');
-		$this->load->view('page_pembayaran',$data);
+		$this->load->view('page_pembayaran',['data'=>$data_pembayaran]);
     }
-	public function roomchat(){
+	public function roomchat($data){
 		$this->load->view('roomchat');
-	}
+    }
+    public function homeadmin(){
+        redirect('obats');
+    }
 }
 
