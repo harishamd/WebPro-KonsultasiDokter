@@ -28,12 +28,12 @@
 				<div class="card mb-3">
 					<div class="card-header">
 
-						<a href="<?php echo site_url('admin/obat/') ?>"><i class="fas fa-arrow-left"></i>
+						<a href="<?php echo site_url('obats/') ?>"><i class="fas fa-arrow-left"></i>
 							Back</a>
 					</div>
 					<div class="card-body">
 
-						<form action="<?php base_url(" admin/obat/edit") ?>" method="post"
+						<form action="<?php base_url(" obats/edit") ?>" method="post"
 							enctype="multipart/form-data" >
 
 							<input type="hidden" name="id" value="<?php echo $obat->id_obat?>" />
