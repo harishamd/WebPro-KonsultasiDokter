@@ -21,7 +21,7 @@
 				<!-- DataTables -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('admin/obat/add') ?>"><i class="fas fa-plus"></i> Add New</a>
+						<a href="<?php echo site_url('obats/add') ?>"><i class="fas fa-plus"></i> Add New</a>
 					</div>
 					<div class="card-body">
 
@@ -51,9 +51,9 @@
 										<td class="small">
 											<?php echo substr($obat->deskripsi, 0, 120) ?>...</td>
 										<td width="250">
-											<a href="<?php echo site_url('admin/obat/edit/'.$obat->id_obat) ?>"
+											<a href="<?php echo site_url('obats/edit/'.$obat->id_obat) ?>"
 											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-											<a onclick="deleteConfirm('<?php echo site_url('admin/obat/delete/'.$obat->id_obat) ?>')"
+											<a onclick="deleteConfirm('<?php echo site_url('obats/delete/'.$obat->id_obat) ?>')"
 											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 										</td>
 									</tr>
