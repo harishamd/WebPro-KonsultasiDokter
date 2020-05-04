@@ -26,11 +26,11 @@
 
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('admin/obat/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+						<a href="<?php echo site_url('obats/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
 					</div>
 					<div class="card-body">
 
-						<form action="<?php base_url('admin/obat/add') ?>" method="post" enctype="multipart/form-data" >
+						<form action="<?php base_url('obats/add') ?>" method="post" enctype="multipart/form-data" >
 							<div class="form-group">
 								<label for="name">Nama Obat*</label>
 								<input class="form-control <?php echo form_error('nama_obat') ? 'is-invalid':'' ?>"
