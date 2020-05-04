@@ -33,7 +33,7 @@ class Obats extends CI_Controller
 
     public function edit($id = null)
     {
-        if (!isset($id)) redirect('admin/obats');
+        if (!isset($id)) redirect('obats');
        
         $obat = $this->obat_model;
         $validation = $this->form_validation;
@@ -55,7 +55,7 @@ class Obats extends CI_Controller
         if (!isset($id)) show_404();
         
         if ($this->obat_model->delete($id)) {
-            redirect(site_url('admin/obats'));
+            redirect(site_url('obats'));
         }
     }
 }
