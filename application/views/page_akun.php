@@ -6,12 +6,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<nav class="navbar navbar-inverse">
-  <ul class="nav navbar-nav">
-    <li><a href="<?php echo base_url('index.php/page/home') ?>">Home</a></li>
-  </ul>
-  <p class="navbar-text">> Akun</p>
-</nav>
 <div class="container">
   <h2>Akun</h2>
   <form action='<?=site_url('User/editakun')?>' method='post'>
