@@ -87,12 +87,14 @@ class Page extends CI_Controller {
         $this->load->view('page_header');
         $this->load->view("page_obat", $data);
     }
-	public function pembayaran($nama){
-		$data_pembayaran = $this->UserModel->GetPembayaran();
+	public function pembayaran(){
+		$data['namaobat'] = $this->input->post('nama');
+		$data['hargaobat'] = $this->input->post('harga');
+		$data['namauser'] = $this->session->user['nama'];;
 		$this->load->view('page_header');
-		$this->load->view('page_pembayaran',['data'=>$data_pembayaran]);
+		$this->load->view('page_pembayaran',$data);
     }
-	public function roomchat($data){
+	public function roomchat(){
 		$this->load->view('roomchat');
     }
     public function homeadmin(){
