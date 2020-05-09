@@ -26,7 +26,7 @@
 	<?php endif; ?>
   <h2>Tanya Dokter</h2>
   <p>Silahkan ajukan pertanyaan anda pada form ini</p>
-	<form method='post' action="<<?=base_url('index.php/chat/addChat')?>">
+	<form method='post' action="<?=base_url('index.php/chat/addChat')?>">
     <div class="form-group">
       <label for="sbj">Subjek</label>
       <input type="text" class="form-control" id="subjek" name="subjek">

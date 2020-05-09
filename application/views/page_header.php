@@ -28,7 +28,7 @@
     		</div>
    			<ul class="nav navbar-nav">
       			<li class="active"><a href="<?php echo base_url('index.php/page/home') ?>">Home</a></li>
-			<li><a href="<?php echo base_url('index.php/page/obat') ?>">Daftar Obat</a></li>
+				<li><a href="<?php echo base_url('index.php/page/obat') ?>">Daftar Obat</a></li>
       			<li><a href="<?php echo base_url('index.php/page/pembayaran') ?>">Beli Obat</a></li>
       			<li><a href="<?php echo base_url('index.php/page/roomchat') ?>">Tanya Dokter</a></li>
     		</ul>
